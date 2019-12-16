@@ -113,6 +113,7 @@ elif [[ $TRAIN_JOB == "tune" ]]; then
     --module-name trainer.task \
     --package-path trainer \
     --config ${CONFIG_TUNE} \
+    --master-machine-type \
     -- \
     --hypertune \
     ${ARGS}
