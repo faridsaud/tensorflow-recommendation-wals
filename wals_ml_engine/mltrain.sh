@@ -75,6 +75,7 @@ if [[ ${TRAIN_JOB} == "local" ]]; then
   gcloud ml-engine local train \
     --module-name trainer.task \
     --package-path trainer \
+    --master-machine-type \
     -- \
     --job-dir jobs/${JOB_NAME} \
     ${ARGS}
@@ -113,7 +114,6 @@ elif [[ $TRAIN_JOB == "tune" ]]; then
     --module-name trainer.task \
     --package-path trainer \
     --config ${CONFIG_TUNE} \
-    --master-machine-type \
     -- \
     --hypertune \
     ${ARGS}
