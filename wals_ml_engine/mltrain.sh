@@ -89,7 +89,6 @@ elif [[ ${TRAIN_JOB} == "train" ]]; then
     --job-dir ${BUCKET}/jobs/${JOB_NAME} \
     --module-name trainer.task \
     --package-path trainer \
-    --master-machine-type=n1-standard-4 \
     --config trainer/config/config_train.json \
     -- \
     ${ARGS}
