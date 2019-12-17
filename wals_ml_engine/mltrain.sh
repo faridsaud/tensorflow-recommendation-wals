@@ -107,7 +107,6 @@ elif [[ $TRAIN_JOB == "tune" ]]; then
 
   gcloud ml-engine jobs submit training ${JOB_NAME} \
     --region ${REGION} \
-    --scale-tier=CUSTOM \
     --job-dir ${BUCKET}/jobs/${JOB_NAME} \
     --module-name trainer.task \
     --package-path trainer \
