@@ -89,7 +89,7 @@ elif [[ ${TRAIN_JOB} == "train" ]]; then
     --job-dir ${BUCKET}/jobs/${JOB_NAME} \
     --module-name trainer.task \
     --package-path trainer \
-    --config trainer/config/config_train.json \
+    --config trainer/config/config_train.yaml \
     -- \
     ${ARGS}
 
