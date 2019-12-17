@@ -83,13 +83,13 @@ elif [[ ${TRAIN_JOB} == "train" ]]; then
 
   ARGS="--gcs-bucket $BUCKET --train-file ${DATA_FILE} --verbose-logging $@"
 
-  gcloud ml-engine jobs submit training ${JOB_NAME} \
+  gcloud ai-platform jobs submit training ${JOB_NAME} \
     --region $REGION \
     --scale-tier=CUSTOM \
     --job-dir ${BUCKET}/jobs/${JOB_NAME} \
     --module-name trainer.task \
     --package-path trainer \
-    --config trainer/config/config_train.yaml \
+    --config trainer/config/config_train.json \
     -- \
     ${ARGS}
 
